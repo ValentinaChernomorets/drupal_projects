@@ -1,0 +1,23 @@
+# Drupal core and contrib  modules
+web/core/
+web/modules/contrib/
+web/themes/contrib/
+backup/
+
+# Composer dependencies
+vendor/
+composer.lock
+
+# Node.js dependencies
+node_modules/
+
+# user files
+web/sites/default/files/
+
+# Docker data
+docker/db_data/
+docker/drupal_data/
+
+# Log and temporary files
+*.log
+
