@@ -1,0 +1,23 @@
+// Colors
+$color-primary: #8000ff;
+$color-primary-light: #e0a3ff;
+
+$color-text: #ffffffe3;
+$color-text-heading: #00ffff;
+
+$color-light: #cfa61fc9;
+
+// Fonts
+$font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+// Breackpoints
+$spacing: 8px;
+$gutter: $spacing + 2px;
+$gutter-sm: $spacing + 3px;
+
+$xs: 480px;
+$sm: 760px;
+$md: 992px;
+$lg: 1256px;
+
+$container-max: 1170px;

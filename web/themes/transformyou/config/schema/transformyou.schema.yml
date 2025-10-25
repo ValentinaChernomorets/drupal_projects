@@ -1,0 +1,8 @@
+# Schema for the configuration files of the transformyou theme.
+transformyou.settings:
+  type: theme_settings
+  label: 'transformyou settings'
+  mapping:
+    example:
+      type: string
+      label: Example

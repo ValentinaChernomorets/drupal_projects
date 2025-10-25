@@ -1,0 +1,22 @@
+name: test
+type: theme
+'base theme': stable9
+version: 1.0.0
+libraries:
+  - test/base
+  - test/messages
+  - core/normalize
+libraries-extend:
+  user/drupal.user:
+    - test/user
+  core/drupal.dropbutton:
+    - test/dropbutton
+  core/drupal.dialog:
+    - test/dialog
+  file/drupal.file:
+    - test/file
+  core/drupal.progress:
+    - test/progress
+description: ''
+core_version_requirement: ^10
+generator: 'starterkit_theme:10.5.4'

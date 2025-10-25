@@ -905,3 +905,5 @@ $databases['default']['default'] = array (
   'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
 );
 $settings['config_sync_directory'] = 'sites/default/files/config_9tPoecfs-7dpwvw1iDoQNnV3IntwR2_Dx501y6-DDeGCaMMRmMlj1DhOzT8xywhtBp-qoZ-5IA/sync';
+
+$settings['container_yamls'][] = $app_root . '/' . $site_path . '/development.services.yml';
