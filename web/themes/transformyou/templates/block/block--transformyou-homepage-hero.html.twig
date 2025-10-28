@@ -15,22 +15,19 @@
             <h1 class="page-hero__title">
                 {{ content.field_text_formatted|without('#theme') }}
             </h1>
-
             <div class="page-hero__text">
                 {{ content.body|without('#theme') }}
             </div>
-
-            {# <div class="page-hero__stats">
+            <div class="page-hero__stats">
                 {% for item in content.field_hero_stats|children %}
                     {{ item }}
                 {% endfor %}
-            </div> #}
-
-            {# <div class="page-hero__actions">
+            </div>
+            <div class="page-hero__actions">
                 {% for item in content.field_link_m|children %}
                     {{ item }}
                 {% endfor %}
-            </div> #}
+            </div>
         </div>
       </div>
     {% endblock %}
