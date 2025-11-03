@@ -64,11 +64,20 @@
 {#  NavBar #}
   <header class="page__navbar">
     {{ page.navbar }}
+    <div class="container-burger">
+      <button class="mobile-menu-toggle" aria-controls="main-menu" aria-expanded="false">
+        <span class="mobile-menu-toggle__icon"></span>
+        <span class="visually-hidden">Toggle menu</span>
+      </button>
+      <nav id="main-menu" class="main-menu">
+        {{ page.navbar }}
+      </nav>
+    </div>
   </header>
 
-  <header class="page__header" role="banner">
+  {# <header class="page__header" role="banner">
     {{ page.header }}
-  </header>
+  </header> #}
   
   {{page.featured}}
 

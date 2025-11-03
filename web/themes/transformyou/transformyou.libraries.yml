@@ -1,7 +1,12 @@
 # Main theme library.
 global:
+  version: 1.x
   js:
     js/transformyou.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.once
+    - core/jquery
   css:
     base:
       css/base/elements.css: {}
