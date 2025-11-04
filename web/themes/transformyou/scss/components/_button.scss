@@ -1,34 +1,51 @@
 @use "./base/variables" as *;
 
-.button,
-a.button {
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 24px;
-  border: 0;
-  margin: 0;
-  padding: 12px 20px;
-  display: inline-flex;
-  appearance: none;
-  text-decoration: none;
-
-  &--primary {
-    background: $color-primary;
-    color: $color-light;
-    border-radius: 4px;
-    box-shadow: 4px 5px 15px rgba($color-primary, 0.4);
-  }
-
-  &--outline {
-    border: 1px solid $color-text-heading;
-    background: none;
-    color: $color-text-heading;
-    padding: 11px 19px;
-    border-radius: 4px;
-
+.page-hero__actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: buttonSlideUp 1.2s ease 1.5s forwards;
+  .cta-button {
+    display: inline-block;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #e0a3ff, #ff69b4);
+    color: #000;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 15px rgba(224, 163, 255, 0.2);
     &:hover {
-      border-color: $color-primary;
-      color: $color-primary;
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(224, 163, 255, 0.3);
     }
   }
+  .cta-button.secondary {
+    background: transparent;
+    border: 2px solid #e0a3ff;
+    color: #e0a3ff;
+    box-shadow: 0 4px 15px rgba(224, 163, 255, 0.1);
+    &:hover {
+      background: rgba(224, 163, 255, 0.08);
+      box-shadow: 0 12px 30px rgba(224, 163, 255, 0.2);
+    }
+  }
+}
+
+@keyframes buttonSlideUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+ }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+ }
 }

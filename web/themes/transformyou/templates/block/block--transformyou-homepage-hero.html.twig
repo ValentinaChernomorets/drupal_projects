@@ -12,6 +12,9 @@
     {% block content %}
       <div class="page-hero__content">
         <div class="page-hero__group">
+            <div class="page-hero__sub-title">
+              {{ content.field_sub_title|without('#theme')}}
+            </div>
             <h1 class="page-hero__title">
                 {{ content.field_text_formatted|without('#theme') }}
             </h1>
@@ -24,9 +27,12 @@
                 {% endfor %}
             </div>
             <div class="page-hero__actions">
+              {% if content.field_link_m %}
                 {% for item in content.field_link_m|children %}
-                    {{ item }}
+                  <a href="{{ item.field_link_m[0]['#url'] }}" class="cta-button{% if loop.index == 2 %} secondary{% endif %}">
+                    {{ item['#title'] }}
                 {% endfor %}
+              {% endif %}  
             </div>
         </div>
       </div>
