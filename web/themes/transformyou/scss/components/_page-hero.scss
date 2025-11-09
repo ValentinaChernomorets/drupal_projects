@@ -91,7 +91,6 @@
     &__group {
       max-width: 1000px;
       padding: 80px 40px;
-      margin-top: 120px;
       animation: heroAppear 2.5s ease-out;
       position: relative;
       background: none;
@@ -195,10 +194,9 @@
 
     &__actions {
       margin-top: 48px;
-  
       a {
         // @extend .button;
         // @extend .button--primary;
       }
     }
-  }
+}

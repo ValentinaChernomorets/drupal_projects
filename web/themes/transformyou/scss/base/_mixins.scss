@@ -7,3 +7,15 @@
 @mixin transition($prop: all, $time: 0.3s, $ease: ease) {
     transition: $prop $time $ease;
 }
+@mixin backdrop-filter {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(224, 163, 255, 0.1), rgba(255, 105, 180, 0.1));
+    z-index: 1;
+    backdrop-filter: blur(1px);
+    transition: all 0.4s ease;
+}

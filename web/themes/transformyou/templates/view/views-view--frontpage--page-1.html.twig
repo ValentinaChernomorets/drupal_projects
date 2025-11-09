@@ -1,0 +1,19 @@
+{#
+  Custom template for the 'frontpage' view (display 'page_1')
+#}
+
+<div class="view-frontpage">
+  <h2 class="view-title">About me</h2>
+
+  {# The title View, if it is in the admin — {{ title }} #}
+  {% if title %}
+    <h3>{{ title }}</h3>
+  {% endif %}
+
+  {# Render the rows of view #}
+  <div class="specialization-diagonal-grid">
+    {{ rows }}
+  </div>
+  {# Paginatioon of the page #}
+  {{ pager }}
+</div>
