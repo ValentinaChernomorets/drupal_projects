@@ -140,6 +140,18 @@ body {
   transform: scale(1.05);
   box-shadow: 0 20px 40px rgba(224, 163, 255, 0.3);
 }
+.page__main #block-transformyou-content .specialization-diagonal-grid .views-row .specialization__visual::before, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization .specialization__visual::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(224, 163, 255, 0.1), rgba(255, 105, 180, 0.1));
+  z-index: 1;
+  backdrop-filter: blur(1px);
+  transition: all 0.4s ease;
+}
 .page__main #block-transformyou-content .specialization-diagonal-grid .views-row .specialization__visual:hover::before, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization .specialization__visual:hover::before {
   background: linear-gradient(45deg, rgba(224, 163, 255, 0.2), rgba(255, 105, 180, 0.2));
 }

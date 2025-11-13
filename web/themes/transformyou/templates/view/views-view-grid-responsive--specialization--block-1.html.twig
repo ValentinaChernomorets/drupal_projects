@@ -1,0 +1,8 @@
+<div class="specialization-grid">
+  {% for row in items %}
+    <div class="specialization-item">
+      {# row.content содержит весь HTML одного item-а #}
+      {{ row.content }}
+    </div>
+  {% endfor %}
+</div>
