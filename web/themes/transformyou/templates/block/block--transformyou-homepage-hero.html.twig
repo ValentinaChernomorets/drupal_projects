@@ -34,6 +34,7 @@
                 {% for item in content.field_link_m|children %}
                   <a href="{{ item.field_link_m[0]['#url'] }}" class="cta-button{% if loop.index == 2 %} secondary{% endif %}">
                     {{ item['#title'] }}
+                  </a>
                 {% endfor %}
               {% endif %}  
             </div>

@@ -48,19 +48,49 @@ body {
   flex-grow: 1;
 }
 
+.features {
+  padding: 150px 0;
+  position: relative;
+  overflow: hidden;
+}
+.features::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+  animation: rotate 20s linear infinite;
+  z-index: -1;
+}
+.features .features-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .page__main {
   flex-grow: 1;
   margin: 0px auto;
   padding: 0px 20px;
 }
-.page__main #block-transformyou-content .view-title {
+.page__main .view-block-frontpage-specialization .view-title {
   text-align: center;
   font-size: clamp(2.5rem, 6vw, 4rem);
   margin-bottom: 80px;
   color: #00ffff;
   position: relative;
 }
-.page__main #block-transformyou-content .view-title:after {
+.page__main .view-block-frontpage-specialization .view-title:after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -71,24 +101,29 @@ body {
   background: linear-gradient(90deg, #00ffff, rgb(255, 0, 128));
   border-radius: 2px;
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid {
   display: flex;
   flex-direction: column;
   gap: 60px;
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid .views-row, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item {
   display: flex;
   align-items: center;
   gap: 80px;
   position: relative;
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid .views-row .specialization__content, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization .specialization__content {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .specialization__content {
   flex: 1;
   padding: 50px;
   transform: skew(-5deg);
   transition: all 0.4s ease;
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid .views-row .specialization__content .specialization__icon, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization .specialization__content .specialization__icon {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .specialization__content .specialization__icon {
   font-size: 1rem;
   margin-bottom: 10px;
   background: linear-gradient(45deg, #ff0080, #8000ff);
@@ -96,21 +131,21 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid .views-row .specialization__content .specialization__title, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization .specialization__content .specialization__title {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .specialization__content .specialization__title {
   font-size: 2.2rem;
   margin-bottom: 20px;
   color: #ffffff;
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid .views-row .specialization__content p, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization .specialization__content p {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .specialization__content p {
   font-size: 1.1rem;
   color: #cccccc;
   line-height: 1.8;
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid .views-row .specialization__content:hover, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization .specialization__content:hover {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .specialization__content:hover {
   transform: skew(-5deg) translateY(-10px);
   box-shadow: 0 30px 60px rgba(0, 255, 255, 0.2);
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid .views-row .specialization__content::before, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization .specialization__content::before {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .specialization__content::before {
   content: "";
   position: absolute;
   top: 0;
@@ -122,10 +157,10 @@ body {
   backdrop-filter: blur(1px);
   transition: all 0.4s ease;
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid .views-row .specialization__content:hover::before, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization .specialization__content:hover::before {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .specialization__content:hover::before {
   background: linear-gradient(45deg, rgba(224, 163, 255, 0.2), rgba(255, 105, 180, 0.2));
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid .views-row .specialization__visual, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization .specialization__visual {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .specialization__visual {
   flex: 1;
   height: 300px;
   position: relative;
@@ -136,11 +171,11 @@ body {
   background-repeat: no-repeat;
   transition: all 0.4s ease;
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid .views-row .specialization__visual:hover, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization .specialization__visual:hover {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .specialization__visual:hover {
   transform: scale(1.05);
   box-shadow: 0 20px 40px rgba(224, 163, 255, 0.3);
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid .views-row .specialization__visual::before, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization .specialization__visual::before {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .specialization__visual::before {
   content: "";
   position: absolute;
   top: 0;
@@ -152,17 +187,17 @@ body {
   backdrop-filter: blur(1px);
   transition: all 0.4s ease;
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid .views-row .specialization__visual:hover::before, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization .specialization__visual:hover::before {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .specialization__visual:hover::before {
   background: linear-gradient(45deg, rgba(224, 163, 255, 0.2), rgba(255, 105, 180, 0.2));
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid .views-row .glass, .page__main #block-transformyou-content .specialization-diagonal-grid .container_specialization .glass {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .glass {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
-.page__main #block-transformyou-content .specialization-diagonal-grid .views-row:nth-child(even) .container_specialization {
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-item:nth-child(even) {
   flex-direction: row-reverse;
 }
 

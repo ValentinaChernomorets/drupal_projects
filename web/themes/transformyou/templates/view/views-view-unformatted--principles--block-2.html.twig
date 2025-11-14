@@ -1,0 +1,14 @@
+<div class="principles-grid">
+  {% for row in rows %}
+    {% if loop.index0 % 4 == 0 %}
+      {% if not loop.first %}</div>{% endif %}
+      <div class="principles-row">
+    {% endif %}
+
+    <div class="principles-item">
+      {{ row.content }}
+    </div>
+
+    {% if loop.last %}</div>{% endif %}
+  {% endfor %}
+</div>
