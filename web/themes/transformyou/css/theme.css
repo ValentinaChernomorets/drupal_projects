@@ -330,6 +330,78 @@ body {
     transform: scaleX(1);
   }
 }
+.view-block-frontpage-principles .section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 80px;
+  color: #00ffff;
+  position: relative;
+}
+.view-block-frontpage-principles .section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #00ffff, rgb(255, 0, 128));
+  border-radius: 2px;
+}
+.view-block-frontpage-principles .hexagon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.view-block-frontpage-principles .hexagon-container .views-col {
+  width: 220px !important;
+  height: 290px;
+  position: relative;
+  margin: 35px;
+}
+.view-block-frontpage-principles .hexagon-container .views-col .hexagon-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  padding: 50px 25px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  transform: rotate(30deg);
+}
+.view-block-frontpage-principles .hexagon-container .views-col .hexagon-inner:hover {
+  transform: rotate(0deg);
+  border-radius: 15px;
+}
+.view-block-frontpage-principles .hexagon-container .views-col .hexagon-inner .hexagon-icon {
+  margin-bottom: 20px;
+  font-size: 2.8rem;
+  transform: rotate(30deg);
+  filter: drop-shadow(0 0 10px currentColor);
+  transition: all 0.4s ease;
+}
+.view-block-frontpage-principles .hexagon-container .views-col .glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.views-row:nth-child(odd) .hexagon-inner {
+  background: linear-gradient(135deg, rgba(0, 255, 255, 0.12), rgba(255, 0, 128, 0.12));
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
 body {
   font-size: 1rem;
   font-weight: 400;

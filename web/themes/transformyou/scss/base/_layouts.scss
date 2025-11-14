@@ -174,11 +174,7 @@ body {
                         }
                     }
                     .glass {
-                        background: rgba(255, 255, 255, 0.05);
-                        backdrop-filter: blur(20px);
-                        border: 1px solid rgba(255, 255, 255, 0.1);
-                        border-radius: 20px;
-                        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                        @include glass;
                     }
                 }
             }
@@ -309,11 +305,75 @@ body {
         transform: scaleX(1);
    }
 }
+// Style for Principples container
+.view-block-frontpage-principles {
+    .section-title {
+        text-align: center;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        margin-bottom: 80px;
+        color: $color-text-heading;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, $color-text-heading, $color-text-heading-gradient);
+            border-radius: 2px;
+        }
+    }
+    .hexagon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        max-width:1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        .views-col {
+            width: 220px !important;
+            height: 290px;
+            position:relative;
+            margin: 35px;
+            .hexagon-inner {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                border-radius: 25px;
+                padding: 50px 25px;
+                overflow: hidden;
+                transition: all 0.4s ease;
+                transform: rotate(30deg);
+                &:hover {
+                    // transform: scale(1.1);
+                    transform: rotate(0deg);
+                    border-radius: 15px;
+                }
+                .hexagon-icon {
+                    margin-bottom: 20px;
+                    font-size: 2.8rem;
+                    transform: rotate(30deg);
+                    filter: drop-shadow( 0 0 10px currentColor);
+                    transition: all 0.4s ease;
+                }
+            }
+            .glass {
+                @include glass;
+            }
 
-// <!-- FILE NAME SUGGESTIONS:
-//    ▪️ block--transformyou-views-block--principles-block-2.html.twig
-//    ▪️ block--views-block--principles-block-2.html.twig
-//    ▪️ block--views-block.html.twig
-//    ▪️ block--views.html.twig
-//    ✅ block.html.twig
-// -->
+        }
+    }
+
+}
+.views-row:nth-child(odd) .hexagon-inner {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.12), rgba(255, 0, 128, 0.12));
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
