@@ -6,7 +6,7 @@ html {
 
 body {
     font-family: $font-family;
-    background: #000;
+    background: $color-background;
     color: $color-primary-light;
     overflow-x: hidden;
     min-height: 100vh;
@@ -20,7 +20,7 @@ body {
     box-sizing: border-box;
 }
 
-// Background Pulse
+/*---------------------- Style for Background Pulse ----------------------*/
 .neural-background {
     position: fixed;
     top: 0;
@@ -81,18 +81,15 @@ body {
         transform: rotate(360deg);
    }
 }
-
+/*---------------------- Style for page main ----------------------*/ 
 .page__main {
     flex-grow: 1;
     margin: 0px auto;
     padding: 0px 20px;
     .view-block-frontpage-specialization {
         .view-title {
-            text-align: center;
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            margin-bottom: 80px;
+            @include section-title-style;
             color: $color-text-heading;
-            position: relative;
             &:after {
               content: "";
               position: absolute;
@@ -199,7 +196,7 @@ body {
     padding-right: $gutter-sm;
 }
 
-/* Floating geometric shapes */
+/*---------------------- Style for background Floating geometric shapes ----------------------*/
 .geometric-shapes {
     position: fixed;
     top: 0;
@@ -259,7 +256,7 @@ body {
    }
 }
 
-/* Neural network lines */
+/*---------------------- Style for Neural network lines ----------------------*/
 .neural-lines {
     position: fixed;
     top: 0;
@@ -305,14 +302,12 @@ body {
         transform: scaleX(1);
    }
 }
-// Style for Principples container
+
+/*---------------------- Style for Principples container ----------------------*/
 .view-block-frontpage-principles {
     .section-title {
-        text-align: center;
-        font-size: clamp(2.5rem, 6vw, 4rem);
-        margin-bottom: 80px;
+        @include section-title-style;
         color: $color-text-heading;
-        position: relative;
         &::after {
             content: '';
             position: absolute;
@@ -353,27 +348,117 @@ body {
                 transition: all 0.4s ease;
                 transform: rotate(30deg);
                 &:hover {
-                    // transform: scale(1.1);
                     transform: rotate(0deg);
                     border-radius: 15px;
+                    .hexagon-icon, h4, p   { 
+                        transform: rotate(0deg);
+                    }
                 }
                 .hexagon-icon {
-                    margin-bottom: 20px;
                     font-size: 2.8rem;
-                    transform: rotate(30deg);
                     filter: drop-shadow( 0 0 10px currentColor);
-                    transition: all 0.4s ease;
+                    @include hexagon-rotate;
+                }
+                h4 {
+                    margin-top: unset;
+                    margin-bottom: unset;
+                    @include hexagon-rotate;
+                }
+                p {
+                    font-size: $font-size-min;
+                    color: $color-p-text-level-1;
+                    line-height: 1.5;
+                    max-width: 140px;
+                    word-wrap: break-word;
+                    hyphens: auto;
+                    @include hexagon-rotate;
                 }
             }
             .glass {
                 @include glass;
             }
-
         }
     }
-
 }
 .views-row:nth-child(odd) .hexagon-inner {
     background: linear-gradient(135deg, rgba(0, 255, 255, 0.12), rgba(255, 0, 128, 0.12));
     border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+/* Style for expiriences content */
+.experience-timeline {
+    padding: 100px 0;
+    position: relative;
+    .section-title {
+        @include section-title-style;
+        color: $color-text-heading;
+    }
+    .timeline-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        position: relative;
+        padding: 0 20px;
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, $color-primary-light, $color-text-heading-gradient, $color-primary);
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(224, 163, 255, 0.3);
+        }
+        .views-row {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 60px;
+            position: relative;
+            margin-bottom: 60px;
+            .timeline-specialization-content {
+                max-width: 450px;
+                padding: 50px 40px;
+                position: relative;
+                transform: perspective(1000px) rotateY(-5deg);
+                transition: all 0.4s ease;
+                background: rgba(224, 163, 255, 0.08);
+                backdrop-filter: blur(25px);
+                border: 1px solid rgba(224, 163, 255, 0.15);
+                border-radius: 25px;
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+                &:hover {
+                    transform: perspective(1000px) rotateY(0deg) translateZ(20px);
+                    box-shadow: 0 25px 60px rgba(224, 163, 255, 0.2), 0 0 0 1px rgba(224, 163, 255, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+                    border-color: rgba(224, 163, 255, 0.3);
+                }
+                .timeline-year {
+                    text-align: center;
+                    font-size: 3rem;
+                    color: $color-primary-light;
+                    position: relative;
+                }
+            }
+            .timeline-dot {
+                position: absolute;
+                left: 50%;
+                top: 60px;
+                transform: translateX(-50%);
+                width: 24px;
+                height: 24px;
+                background: linear-gradient(135deg, #ff69b4, #e0a3ff);
+                border-radius: 50%;
+                box-shadow: 0 0 25px rgba(255, 105, 180, 0.6), 0 4px 15px rgba(0, 0, 0, 0.3);
+                z-index: 1;
+                border: 3px solid rgba(255, 255, 255, 0.2);
+            }
+        }
+        .views-row:nth-child(even) {
+            justify-content: flex-start;
+            padding-left: 60px;
+            padding-right: 0;
+        }
+        .views-row:nth-child(even) .timeline-specialization-content {
+            transform: perspective(1000px) rotateY(5deg);
+       }
+    }
 }
