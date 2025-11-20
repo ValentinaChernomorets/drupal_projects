@@ -462,3 +462,94 @@ body {
        }
     }
 }
+
+.contact-section {
+    position: relative;
+    padding: 150px 0px;
+
+    .webform-submission-form {
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        margin: 0px auto;
+        padding: 0px 20px;
+        gap: 80px;
+        #edit-information {
+            position: relative;
+            padding: 60px 40px;
+            &::before {
+                content: "";
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                z-index: -1;
+                background: radial-gradient(circle, rgba(0, 255, 255, 0.1), transparent 70%);
+                animation: 4s ease-in-out 0s infinite normal none running pulse;
+            }
+            h3 {
+                font-size: 2.5rem;
+                color: $color-text-heading;
+                margin-bottom: 30px;
+            }
+            p {
+                font-size: 1.2rem;
+                color: $color-p-text;
+            }
+            .social-links, p {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                margin-top: 40px;
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 15px;
+                    color: $color-text-heading;
+                    text-decoration: none;
+                    font-size: 1.5rem;
+                    transition: all 0.3s ease;
+                    overflow: hidden;
+                }
+                .facebook::before {
+                    content: "";
+                    width: 40px;
+                    height: 40px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-image: url('../images/social-icon/facebook.png');
+                }
+                .mail::before {
+                    content: "";
+                    width: 40px;
+                    height: 40px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-image: url('../images/social-icon/mail.png');
+                }
+                .instagram::before {
+                    content: "";
+                    width: 40px;
+                    height: 40px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-image: url('../images/social-icon/instagram.png');
+                }
+            }
+        }
+        #edit-contact-me {
+            padding: 50px 40px;
+        }
+        
+        .glass {
+            @include glass;
+        }
+    }
+
+
+}
