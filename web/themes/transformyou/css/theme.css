@@ -5,7 +5,7 @@ html {
 
 body {
   font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  background: #000;
+  background: #000000;
   color: #e0a3ff;
   overflow-x: hidden;
   min-height: 100vh;
@@ -586,6 +586,42 @@ body {
 }
 .contact-section .webform-submission-form #edit-contact-me {
   padding: 50px 40px;
+}
+.contact-section .webform-submission-form #edit-contact-me .form-item {
+  margin-top: 30px;
+  position: relative;
+}
+.contact-section .webform-submission-form #edit-contact-me .form-item input, .contact-section .webform-submission-form #edit-contact-me .form-item textarea {
+  width: 100%;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+.contact-section .webform-submission-form #edit-contact-me .form-item textarea {
+  margin-bottom: 20px;
+}
+.contact-section .webform-submission-form #edit-contact-me .sent-message {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(45deg, #00ffff, rgb(255, 0, 128));
+  border: none;
+  border-radius: 10px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+.contact-section .webform-submission-form #edit-contact-me .sent-message:hover {
+  transform: translateX(-3px);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
 }
 .contact-section .webform-submission-form .glass {
   background: rgba(255, 255, 255, 0.05);

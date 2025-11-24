@@ -544,8 +544,43 @@ body {
         }
         #edit-contact-me {
             padding: 50px 40px;
+            .form-item {
+                margin-top: 30px;
+                position: relative;
+                input, textarea {
+                    width: 100%;
+                    padding: 15px 20px;
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    border-radius: 10px;
+                    color: $color-white;
+                    font-family: inherit;
+                    font-size: 1rem;
+                    backdrop-filter: blur(10px);
+                    transition: all 0.3s ease;
+                }
+                textarea {
+                    margin-bottom: 20px;
+                }
+            }
+            .sent-message {
+                width: 100%;
+                padding: 18px;
+                background: linear-gradient(45deg, $color-text-heading, $color-text-heading-gradient);
+                border: none;
+                border-radius: 10px;
+                color: $color-black;
+                font-weight: bold;
+                font-size: 1.1rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-transform: uppercase;
+                &:hover {
+                    transform: translateX(-3px);
+                    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
+                }
+            }
         }
-        
         .glass {
             @include glass;
         }
