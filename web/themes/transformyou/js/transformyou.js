@@ -7,7 +7,6 @@
 
   Drupal.behaviors.transformyou = {
     attach (context, settings) {
-      console.log('It works!!!');
       // Mobile menu functionality
       const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
       const mobileNav = document.querySelector('.main-menu');

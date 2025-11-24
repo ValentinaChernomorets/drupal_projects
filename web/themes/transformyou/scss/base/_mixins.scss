@@ -15,6 +15,7 @@
 @mixin transition($prop: all, $time: 0.3s, $ease: ease) {
     transition: $prop $time $ease;
 }
+
 @mixin backdrop-filter {
     content: '';
     position: absolute;
