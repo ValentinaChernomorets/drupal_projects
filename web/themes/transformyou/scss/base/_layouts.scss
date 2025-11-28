@@ -1,5 +1,7 @@
 @use "variables" as *;
 @use "mixins" as *;
+@use "./base/breakpoints" as *;
+
 html {
     font-size: 16px;
 }
@@ -176,9 +178,9 @@ body {
                     }
                 }
             }
-            .specialization-item:nth-child(even) {
-                flex-direction: row-reverse;
-            }
+            // .specialization-item:nth-child(even) {
+            //     flex-direction: row-reverse;
+            // }
         }
     }
       
@@ -645,6 +647,54 @@ footer {
             color: #666;
             font-size: 0.85rem;
             margin-top: 20px;
+        }
+    }
+}
+
+/*---------------------------------- Style for mobile version ---------------------------------------------*/
+
+.specialization-item {
+    @include media-up(xxl) {
+        display: flex;
+    }
+    @include media-down(xl) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+.specialization-item:nth-child(even) {
+    @include media-up(xxl) {
+        flex-direction: row-reverse;
+    }
+    @include media-down(xl) {
+        display: flex;
+        flex-direction: column;
+    }
+}
+.view-block-frontpage-principles {
+    .hexagon-container {
+        .views-row{
+            @include media-down(xl) {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+.experience-timeline .timeline-container .views-row {
+    @include media-down(xl) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: unset !important;
+    }
+    .timeline-specialization-content {
+        @include media-down(xl) {
+            width: 100%;
+            height: 100%;
+            transform: unset !important;
+            max-width: unset;
         }
     }
 }

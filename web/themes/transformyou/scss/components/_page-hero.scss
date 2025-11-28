@@ -1,6 +1,8 @@
 @use "./base/variables" as *;
 @use "button" as *;
+@use "./base/breakpoints" as *;
 
+/*---------------------------------------------- Style for section pahe Hero ----------------------------------------------*/
 .page-hero {
     padding-top: 150px;
     padding-bottom: 150px;
@@ -116,7 +118,7 @@
     }
   
     &__text {
-      max-width: 700px;
+      // max-width: 700px;
       margin: 40px auto 50px;
       opacity: 0;
       animation: fadeInScale 1.2s ease 0.9s forwards;
@@ -196,3 +198,29 @@
       margin-top: 48px;
     }
 }
+
+/*---------------------------------------------- Style for mobile varsion ----------------------------------------------*/
+.page-hero {
+  &__text  {
+    @include media-up(xxl) {
+      max-width: 700px;
+    }
+    @include media-down(xl) {
+      max-width: 500px;
+    }
+    @include media-down(md) {
+      max-width: 400px;
+    }
+  }
+  &__stats  { 
+    @include media-up(xxl) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    @include media-down(xl) {
+      display: grid;
+      grid-template-columns: 2fr 2fr;
+      gap: 10px
+    }
+  }
+ }
