@@ -178,9 +178,6 @@ body {
                     }
                 }
             }
-            // .specialization-item:nth-child(even) {
-            //     flex-direction: row-reverse;
-            // }
         }
     }
       
@@ -593,7 +590,28 @@ body {
         }
     }
 }
-
+/* Style for button on generale page */
+.scroll-top-btn {
+    position: fixed;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, $color-text-heading, $color-text-heading-gradient);
+    border: 1px solid $color-primary;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    visibility: hidden;
+    top: 600px;
+    padding: 10px 10px;
+    right: 40px;
+}
+.scroll-top-btn.show {
+    transition: all 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+}
 /*----------------------  Style for Footer ---------------------- */
 footer {
     text-align: center;
@@ -652,7 +670,7 @@ footer {
 }
 
 /*---------------------------------- Style for mobile version ---------------------------------------------*/
-
+/* Specialization */ 
 .specialization-item {
     @include media-up(xxl) {
         display: flex;
@@ -682,19 +700,36 @@ footer {
     }
 }
 
-.experience-timeline .timeline-container .views-row {
-    @include media-down(xl) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-left: unset !important;
+/* Experience */ 
+.experience-timeline .timeline-container {
+    .timeline-line {
+        left: 30px;
     }
-    .timeline-specialization-content {
+    .views-row {
         @include media-down(xl) {
-            width: 100%;
-            height: 100%;
-            transform: unset !important;
-            max-width: unset;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 80px;
+            padding-right: 0;
         }
+        .timeline-specialization-content {
+            @include media-down(xl) {
+                width: 100%;
+                height: 100%;
+                transform: unset !important;
+                max-width: unset;
+            }
+        }
+        .timeline-dot {
+            left: 30px;
+        }
+    }
+}
+/* Contact Webform */ 
+.contact-section .webform-submission-form {
+    @include media-down(xl) {
+        align-items: center;
+        grid-template-columns: 1fr;
     }
 }

@@ -114,6 +114,11 @@ header {
 
 // ---------------------------------------------- Navbar Menu ---------------------------------------------- //
 .navbar {
+  @include media-down(sm) {
+    padding: 25px 0px;
+    left: 35%;
+    width: 70%; 
+  }
  .navigation {
     @include media-up(xxl) {
       display: flex;
@@ -121,6 +126,11 @@ header {
 
     @include media-down(xl) {
       display: none;
+    }
+  }
+  .navbar__branding {
+    @include media-down(sm) {
+      font-size: 20px;
     }
   }
 }

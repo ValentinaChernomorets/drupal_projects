@@ -634,6 +634,30 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
+/* Style for button on generale page */
+.scroll-top-btn {
+  position: fixed;
+  z-index: 100;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #00ffff, rgb(255, 0, 128));
+  border: 1px solid #8000ff;
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  visibility: hidden;
+  top: 600px;
+  padding: 10px 10px;
+  right: 40px;
+}
+
+.scroll-top-btn.show {
+  transition: all 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
 /*----------------------  Style for Footer ---------------------- */
 footer {
   text-align: center;
@@ -691,6 +715,7 @@ footer .footer-content .footer-design {
 }
 
 /*---------------------------------- Style for mobile version ---------------------------------------------*/
+/* Specialization */
 @media (min-width: 1400px) {
   .specialization-item {
     display: flex;
@@ -722,12 +747,17 @@ footer .footer-content .footer-design {
   }
 }
 
+/* Experience */
+.experience-timeline .timeline-container .timeline-line {
+  left: 30px;
+}
 @media (max-width: 1199.98px) {
   .experience-timeline .timeline-container .views-row {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: unset !important;
+    padding-left: 80px;
+    padding-right: 0;
   }
 }
 @media (max-width: 1199.98px) {
@@ -736,6 +766,17 @@ footer .footer-content .footer-design {
     height: 100%;
     transform: unset !important;
     max-width: unset;
+  }
+}
+.experience-timeline .timeline-container .views-row .timeline-dot {
+  left: 30px;
+}
+
+/* Contact Webform */
+@media (max-width: 1199.98px) {
+  .contact-section .webform-submission-form {
+    align-items: center;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -931,6 +972,13 @@ header .page__navbar {
   margin-left: auto;
 }
 
+@media (max-width: 575.98px) {
+  .navbar {
+    padding: 25px 0px;
+    left: 35%;
+    width: 70%;
+  }
+}
 @media (min-width: 1400px) {
   .navbar .navigation {
     display: flex;
@@ -939,6 +987,11 @@ header .page__navbar {
 @media (max-width: 1199.98px) {
   .navbar .navigation {
     display: none;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar .navbar__branding {
+    font-size: 20px;
   }
 }
 
