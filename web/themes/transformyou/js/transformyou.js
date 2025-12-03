@@ -64,7 +64,11 @@
             behavior: 'smooth',
           })
         })
-      })
+      });
+      document.addEventListener('DOMContentLoaded', function() {
+        const header = document.querySelector('header');
+        header.style.top = '0';
+      });
     }
   };
 

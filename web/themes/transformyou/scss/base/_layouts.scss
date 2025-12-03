@@ -23,6 +23,9 @@ body {
     box-sizing: border-box;
 }
 
+:root {
+    --drupal-displace-offset-top: 0;
+}
 /*---------------------- Style for Background Pulse ----------------------*/
 .neural-background {
     position: fixed;
@@ -468,7 +471,7 @@ body {
     position: relative;
     padding: 150px 0px;
     .webform-submission-form {
-        max-width: 1200px;
+        max-width: 1100px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
@@ -703,7 +706,9 @@ footer {
 /* Experience */ 
 .experience-timeline .timeline-container {
     .timeline-line {
-        left: 30px;
+        @include media-down(xl) { 
+            left: 30px;
+        }
     }
     .views-row {
         @include media-down(xl) {
@@ -722,7 +727,9 @@ footer {
             }
         }
         .timeline-dot {
-            left: 30px;
+            @include media-down(xl) { 
+                left: 30px;
+            }
         }
     }
 }
@@ -731,5 +738,11 @@ footer {
     @include media-down(xl) {
         align-items: center;
         grid-template-columns: 1fr;
+    }
+}
+
+.scroll-top-btn{
+    @include media-down(xl) {
+        right: 210px;
     }
 }
