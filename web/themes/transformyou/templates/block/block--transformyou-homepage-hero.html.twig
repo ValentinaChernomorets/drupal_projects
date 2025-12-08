@@ -11,7 +11,7 @@
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
-  <div class="page-hero__container container">
+  <div id="page-hero-header" class="page-hero__container container">
     {% block content %}
       <div class="page-hero__content">
         <div class="page-hero__group">
@@ -31,10 +31,14 @@
             </div>
             <div class="page-hero__actions">
               {% if content.field_link_m %}
-                {% for item in content.field_link_m|children %}
-                  <a href="{{ item.field_link_m[0]['#url'] }}" class="cta-button{% if loop.index == 2 %} secondary{% endif %}">
-                    {{ item['#title'] }}
-                  </a>
+                {% for item in content.field_link_m %}
+                  {% if item['#url'] is not empty and item['#title'] is not empty %}
+                    {% set link = item['#url'] %}
+                    {% set title = item['#title'] %}
+                    <a href="{{ link }}" class="cta-button{% if loop.index == 2 %} secondary{% endif %}">
+                      {{ title }}
+                    </a>
+                  {% endif %}  
                 {% endfor %}
               {% endif %}  
             </div>

@@ -481,17 +481,17 @@ body {
         #edit-information {
             position: relative;
             padding: 60px 40px;
-            &::before {
-                content: "";
-                position: absolute;
-                top: -50%;
-                left: -50%;
-                width: 200%;
-                height: 200%;
-                z-index: -1;
-                background: radial-gradient(circle, rgba(0, 255, 255, 0.1), transparent 70%);
-                animation: 4s ease-in-out 0s infinite normal none running pulse;
-            }
+            // &::before {
+            //     content: "";
+            //     position: absolute;
+            //     top: -50%;
+            //     left: -50%;
+            //     width: 200%;
+            //     height: 200%;
+            //     z-index: -1;
+            //     background: radial-gradient(circle, rgba(0, 255, 255, 0.1), transparent 70%);
+            //     animation: 4s ease-in-out 0s infinite normal none running pulse;
+            // }
             h3 {
                 font-size: 2.5rem;
                 color: $color-text-heading;
@@ -743,6 +743,11 @@ footer {
 
 .scroll-top-btn{
     @include media-down(xl) {
-        right: 210px;
+        right: 15px;
+    }
+}
+#about-me {
+    @include media-down(xl) {
+        padding: unset;
     }
 }

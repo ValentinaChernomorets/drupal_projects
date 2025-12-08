@@ -524,17 +524,6 @@ body {
   position: relative;
   padding: 60px 40px;
 }
-.contact-section .webform-submission-form #edit-information::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  z-index: -1;
-  background: radial-gradient(circle, rgba(0, 255, 255, 0.1), transparent 70%);
-  animation: 4s ease-in-out 0s infinite normal none running pulse;
-}
 .contact-section .webform-submission-form #edit-information h3 {
   font-size: 2.5rem;
   color: #00ffff;
@@ -790,7 +779,13 @@ footer .footer-content .footer-design {
 
 @media (max-width: 1199.98px) {
   .scroll-top-btn {
-    right: 210px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  #about-me {
+    padding: unset;
   }
 }
 
@@ -1012,8 +1007,8 @@ header .page__navbar {
 
 @media (max-width: 575.98px) {
   header {
-    left: 35%;
-    width: 65%;
+    left: 50%;
+    width: 95%;
   }
 }
 
