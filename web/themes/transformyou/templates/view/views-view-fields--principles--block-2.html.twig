@@ -1,5 +1,5 @@
 {# HTML for certain fileds in princiles #}
-<div class="hexagon-inner glass">
+<div class="hexagon-inner glass" data-full-body="{{ fields.body_1.content|escape('html_attr') }}" data-principles-title="{{fields.field_title_principle.content|escape('html_attr')}}">
     <div class="hexagon-icon">
         {{ fields.field_icon_principle.content }}
     </div>

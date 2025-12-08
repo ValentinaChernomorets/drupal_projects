@@ -3,6 +3,7 @@ global:
   version: 1.x
   js:
     js/transformyou.js: {}
+    js/principles-popup.js: {}
   dependencies:
     - core/drupal
     - core/drupal.once
