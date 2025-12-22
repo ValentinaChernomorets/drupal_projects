@@ -672,6 +672,28 @@ footer {
     }
 }
 
+//------------------------------- Style for block Language switcher  -------------------------------//
+#language-switcher, .language-switcher-wrapper {
+    select {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        border: 1px solid $color-primary;
+        background: conic-gradient(from 0deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        background-image: none !important; /* delete the custom arrow */
+        .flag-option {
+            text-align: center;
+            background-color: #616063;
+        }
+    }
+}
+
 /*---------------------------------- Style for mobile version ---------------------------------------------*/
 /* Specialization */ 
 .specialization-item {
@@ -793,4 +815,13 @@ footer {
 
 .messages__wrapper {
     display: none;
+}
+
+#language-switcher, .language-switcher-wrapper  {
+    @include media-down(xl) {
+        display: none;
+    }
+    @include media-down(md) {
+        display: none;
+    }
 }

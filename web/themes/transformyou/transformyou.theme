@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-
+use Drupal\Core\Language\LanguageInterface;
 /**
  * @file
  * Functions to support theming in the transformyou theme.
@@ -26,4 +26,16 @@ function transformyou_preprocess_page(array &$variables): void {
  */
 function transformyou_preprocess_node(array &$variables): void {
 
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block.html.twig.
+ */
+function transformyou_preprocess_block(array &$variables) {
+  $language_manager = \Drupal::languageManager();
+
+  // the language current page (content language)
+  $variables['current_lang'] = $language_manager
+    ->getCurrentLanguage(LanguageInterface::TYPE_CONTENT)
+    ->getId();
 }

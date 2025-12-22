@@ -1,0 +1,7 @@
+<div id="language-switcher" class="language-switcher-wrapper">
+  <select id="language-id" class="language-switcher" onchange="window.location = this.value;">
+    <option class="flag-option"  value="/" {% if current_lang == 'ru' %}selected{% endif %}>🇷🇺</option>
+    <option class="flag-option" value="/en-gb" {% if current_lang == 'en-gb' %}selected{% endif %}>🇬🇧</option>
+    <option class="flag-option" value="/ro" {% if current_lang == 'ro' %}selected{% endif %}>🇷🇴</option>
+  </select>
+</div>

@@ -7,22 +7,6 @@
 
   Drupal.behaviors.transformyou = {
     attach (context, settings) {
-      // Mobile menu functionality
-      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-      const mobileNav = document.querySelector('.main-menu');
-      mobileMenuToggle.addEventListener('click', () => {
-          mobileMenuToggle.classList.toggle('active');
-          mobileNav.classList.toggle('active');
-      });
-
-      // Close mobile menu when clicking on links
-      document.querySelectorAll('.menu-item a').forEach(link => {
-          link.addEventListener('click', () => {
-              mobileMenuToggle.classList.remove('active');
-              mobileNav.classList.remove('active');
-          });
-      });
-
       // Close mobile menu when clicking outside
       document.addEventListener('click', (e) => {
           if (!mobileMenuToggle.contains(e.target) && !mobileNav.contains(e.target)) {
@@ -73,3 +57,30 @@
   };
 
 } (Drupal));
+
+
+(function (Drupal, once) {
+  Drupal.behaviors.transformyou = {
+    attach(context, settings) {
+
+      // Mobile menu toggle
+      once('mobile-menu-toggle', '.mobile-menu-toggle', context).forEach((mobileMenuToggle) => {
+        const mobileNav = document.querySelector('.main-menu');
+
+        mobileMenuToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          mobileMenuToggle.classList.toggle('active');
+          mobileNav.classList.toggle('active');
+        });
+      });
+
+      // Close mobile menu on link click
+      once('mobile-menu-links', '.menu-item a', context).forEach((link) => {
+        link.addEventListener('click', () => {
+          document.querySelector('.mobile-menu-toggle')?.classList.remove('active');
+          document.querySelector('.main-menu')?.classList.remove('active');
+        });
+      });
+    }
+  };
+})(Drupal, once);
