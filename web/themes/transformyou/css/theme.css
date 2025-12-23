@@ -529,9 +529,11 @@ body {
   color: #00ffff;
   margin-bottom: 30px;
 }
-.contact-section .webform-submission-form #edit-information p {
-  font-size: 1.2rem;
-  color: #cccccc;
+.contact-section .webform-submission-form #edit-information p:first-child {
+  font-size: 2.5rem;
+  color: #00ffff;
+  text-transform: uppercase;
+  font-weight: 200px;
 }
 .contact-section .webform-submission-form #edit-information .social-links, .contact-section .webform-submission-form #edit-information p {
   display: flex;
@@ -720,6 +722,7 @@ footer .footer-content .footer-design {
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
   background-image: none !important; /* delete the custom arrow */
+  padding-left: 1rem;
 }
 #language-switcher select .flag-option, .language-switcher-wrapper select .flag-option {
   text-align: center;
@@ -851,12 +854,12 @@ footer .footer-content .footer-design {
 }
 
 @media (max-width: 1199.98px) {
-  #language-switcher, .language-switcher-wrapper {
+  .container-burger #language-switcher, .container-burger .language-switcher-wrapper {
     display: none;
   }
 }
 @media (max-width: 767.98px) {
-  #language-switcher, .language-switcher-wrapper {
+  .container-burger #language-switcher, .container-burger .language-switcher-wrapper {
     display: none;
   }
 }
@@ -953,6 +956,10 @@ p {
     transform: translateY(0);
   }
 }
+a {
+  text-decoration: none;
+}
+
 header {
   position: fixed;
   top: var(--drupal-displace-offset-top, 0);
@@ -1073,7 +1080,7 @@ header .page__navbar {
 }
 @media (max-width: 575.98px) {
   .navbar .navbar__branding {
-    font-size: 20px;
+    display: none;
   }
 }
 
