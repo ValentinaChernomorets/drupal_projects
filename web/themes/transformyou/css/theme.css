@@ -723,6 +723,7 @@ footer .footer-content .footer-design {
   -moz-appearance: none !important;
   background-image: none !important; /* delete the custom arrow */
   padding-left: 1rem;
+  padding-right: 1rem;
 }
 #language-switcher select .flag-option, .language-switcher-wrapper select .flag-option {
   text-align: center;
