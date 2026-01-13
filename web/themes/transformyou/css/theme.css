@@ -722,14 +722,18 @@ footer .footer-content .footer-design {
   -webkit-appearance: none !important;
   -moz-appearance: none !important;
   background-image: none !important; /* delete the custom arrow */
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 #language-switcher select .flag-option, .language-switcher-wrapper select .flag-option {
   text-align: center;
   background-color: #616063;
 }
 
+@supports (-moz-appearance: none) {
+  select {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
 /*---------------------------------- Style for mobile version ---------------------------------------------*/
 /* Specialization */
 @media (min-width: 1400px) {

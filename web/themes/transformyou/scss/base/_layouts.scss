@@ -678,15 +678,18 @@ footer {
         -webkit-appearance: none !important;
         -moz-appearance: none !important;
         background-image: none !important; /* delete the custom arrow */
-        padding-left: 1rem;
-        padding-right: 1rem;
         .flag-option {
             text-align: center;
             background-color: #616063;
         }
     }
 }
-
+@supports (-moz-appearance: none) {
+    select {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
 /*---------------------------------- Style for mobile version ---------------------------------------------*/
 /* Specialization */ 
 .specialization-item {
