@@ -173,9 +173,6 @@ body {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   transition: all 0.4s ease;
 }
 .page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .specialization__visual:hover {
@@ -196,6 +193,11 @@ body {
 }
 .page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .specialization__visual:hover::before {
   background: linear-gradient(45deg, rgba(224, 163, 255, 0.2), rgba(255, 105, 180, 0.2));
+}
+.page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .specialization__visual img {
+  width: 488px;
+  height: 350px;
+  object-fit: contain;
 }
 .page__main .view-block-frontpage-specialization .specialization-diagonal-grid .specialization-grid .specialization-item .glass {
   background: rgba(255, 255, 255, 0.05);

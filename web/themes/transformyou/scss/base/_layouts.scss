@@ -161,9 +161,6 @@ body {
                         position: relative;
                         border-radius: 20px;
                         overflow: hidden;
-                        background-size: cover;
-                        background-position: center;
-                        background-repeat: no-repeat;
                         transition: all 0.4s ease;
                         &:hover {
                             transform: scale(1.05);
@@ -174,6 +171,11 @@ body {
                         }
                         &:hover::before {
                             background: linear-gradient(45deg, rgba(224, 163, 255, 0.2), rgba(255, 105, 180, 0.2));
+                        }
+                        img {
+                            width: 488px;
+                            height: 350px;
+                            object-fit: contain;
                         }
                     }
                     .glass {
