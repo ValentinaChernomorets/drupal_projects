@@ -4,6 +4,7 @@ global:
   js:
     js/transformyou.js: {}
     js/principles-popup.js: {}
+    js/language-switcher.js: {}
   dependencies:
     - core/drupal
     - core/drupal.once

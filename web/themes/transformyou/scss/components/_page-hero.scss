@@ -60,7 +60,7 @@
 
     @keyframes slideInFromLeft {
       from {
-          opacity: 0;
+          opacity: 0; 
           transform: translateX(-40px);
      }
       to {
@@ -124,9 +124,9 @@
       animation: fadeInScale 1.2s ease 0.9s forwards;
       text-align: center;
       p {
-        font-size: 1.2rem;
+        font-size: 20px;
         color: #d1d1d1;
-        line-height: 1.7;
+        line-height: 1;
         margin-bottom: 0;
         font-weight: 300;
       }
@@ -196,7 +196,7 @@
     &__actions {
       margin-top: 48px;
     }
-}
+} 
 
 /*---------------------------------------------- Style for mobile varsion ----------------------------------------------*/
 .page-hero {

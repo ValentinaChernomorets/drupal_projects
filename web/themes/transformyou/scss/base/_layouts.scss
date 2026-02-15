@@ -365,6 +365,9 @@ body {
                     @include hexagon-rotate;
                 }
                 h4 {
+                    hyphens: auto;
+                    overflow-wrap: break-word;
+                    word-wrap: break-word;
                     margin-top: unset;
                     margin-bottom: unset;
                     @include hexagon-rotate;
@@ -666,23 +669,40 @@ footer {
 }
 
 //------------------------------- Style for block Language switcher  -------------------------------//
-#language-switcher, .language-switcher-wrapper {
-    select {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+.language-switcher-wrapper {
+    position: relative;
+    width: 50px;
+    font-size: 18px;
+    .selected-language {
+        border: 1px solid #fff;
         width: 50px;
         height: 50px;
         border-radius: 50px;
-        border: 1px solid $color-primary;
-        background: conic-gradient(from 0deg, transparent, rgba(0, 255, 255, 0.1), transparent);
-        appearance: none !important;
-        -webkit-appearance: none !important;
-        -moz-appearance: none !important;
-        background-image: none !important; /* delete the custom arrow */
-        .flag-option {
-            text-align: center;
-            background-color: #616063;
+        padding: 10px 10px;
+        color: #fff;
+        cursor: pointer;
+        background: transparent;
+    }
+    .language-switcher {
+        list-style: none;
+        margin: 4px 0 0;
+        padding: 0;
+        position: absolute;
+        width: 100%;
+        background: transparent;
+        border-radius: 10%;
+        display: none;
+        border: 1px solid #fff;
+        &.open {
+            display: block;
+        }
+        li {
+            padding: 6px 10px;
+            cursor: pointer;
+            &:hover {
+                color: $color-primary-light;
+                text-shadow: 0 0 10px rgba(224, 163, 255, 0.5);
+            }
         }
     }
 }
