@@ -1,5 +1,5 @@
 (function (Drupal, once) {
-    Drupal.behaviors.principlesPopup = {
+    Drupal.behaviors.principlesLanguageSwitcher = {
       attach: function (context) {
         once('language-switcher','.language-switcher-wrapper', context).forEach(wrapper => {
           const selected = wrapper.querySelector('.selected-language');

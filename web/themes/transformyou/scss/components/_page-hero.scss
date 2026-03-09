@@ -5,7 +5,6 @@
 /*---------------------------------------------- Style for section pahe Hero ----------------------------------------------*/
 .page-hero {
     padding-top: 150px;
-    padding-bottom: 150px;
     &__content {
       display: flex;
       align-items: center;
@@ -202,7 +201,7 @@
 .page-hero {
   &__text  {
     @include media-up(xxl) {
-      max-width: 700px;
+      max-width: 900px;
     }
     @include media-down(xl) {
       max-width: 500px;

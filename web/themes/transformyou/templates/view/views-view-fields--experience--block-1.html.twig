@@ -1,5 +1,11 @@
 <div class="timeline-specialization-content glass">
-    <div class="timeline-year"> {{ fields.field_year.content }} </div>
+    <div class="timeline-year"> {{ fields.field_date_of_experience.content }} 
+        {% if (fields.field_date_of_experience_end.content|striptags|trim) %}
+            <div class="timeline-year-end"> - {{ fields.field_date_of_experience_end.content }} </div>
+        {% else %}
+            <div class="timeline-year-end"> - {{ 'present'|t }}</div>
+        {% endif %}
+    </div>
     <h4>{{ fields.field_title_of_experience.content }} <br> ({{ fields.field_place.content }})</h4>
     <p> {{ fields.body.content }} </p>
 </div>

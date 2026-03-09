@@ -2,5 +2,7 @@
     "require": {
         "drush/drush": "^12",
         "twig/twig": "^3.8"
-    }
+    },
+   "minimum-stability": "dev",
+   "prefer-stable": true
 }

@@ -58,20 +58,9 @@ body {
 }
 
 .features {
-    padding: 150px 0;
+    padding: 100px 0;
     position: relative;
     overflow: hidden;
-    &::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: conic-gradient(from 0deg, transparent, rgba(0, 255, 255, 0.1), transparent);
-        animation: rotate 20s linear infinite;
-        z-index: -1;
-    }
     .features-container {
         max-width: 1240px;
         margin: 0 auto;
@@ -148,9 +137,6 @@ body {
                             transform: skew(-5deg) translateY(-10px);
                             box-shadow: 0 30px 60px rgba(0, 255, 255, 0.2);
                         }
-                        &::before {
-                            @include backdrop-filter;
-                    }
                         &:hover::before {
                             background: linear-gradient(45deg, rgba(224, 163, 255, 0.2), rgba(255, 105, 180, 0.2));
                         }
@@ -165,9 +151,6 @@ body {
                         &:hover {
                             transform: scale(1.05);
                             box-shadow: 0 20px 40px rgba(224, 163, 255, 0.3);
-                        }
-                        &::before {
-                            @include backdrop-filter;
                         }
                         &:hover::before {
                             background: linear-gradient(45deg, rgba(224, 163, 255, 0.2), rgba(255, 105, 180, 0.2));
@@ -258,53 +241,6 @@ body {
     to {
         transform: translateY(-100px) rotate(360deg);
         opacity: 0;
-   }
-}
-
-/*---------------------- Style for Neural network lines ----------------------*/
-.neural-lines {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-.neural-line {
-    position: absolute;
-    background: linear-gradient(90deg, transparent, #00ffff, transparent);
-    height: 1px;
-    animation: neuralPulse 3s ease-in-out infinite;
-}
-.neural-line:nth-child(1) {
-    top: 20%;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(90deg, transparent, #e0a3ff, transparent);
-    animation-delay: 0s;
-}
-.neural-line:nth-child(2) {
-    top: 60%;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(90deg, transparent, #ff69b4, transparent);
-    animation-delay: -1s;
-}
-.neural-line:nth-child(3) {
-    top: 40%;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(90deg, transparent, #9370db, transparent);
-    animation-delay: -2s;
-}
-@keyframes neuralPulse {
-    0%, 100% {
-        opacity: 0.2;
-        transform: scaleX(0.5);
-   }
-    50% {
-        opacity: 1;
-        transform: scaleX(1);
    }
 }
 
@@ -400,6 +336,17 @@ body {
     .section-title {
         @include section-title-style;
         color: $color-text-heading;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, $color-text-heading, $color-text-heading-gradient);
+            border-radius: 2px;
+        }
     }
     .timeline-container {
         max-width: 1100px;
@@ -440,10 +387,14 @@ body {
                     border-color: rgba(224, 163, 255, 0.3);
                 }
                 .timeline-year {
-                    text-align: center;
-                    font-size: 3rem;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                    font-size: 2rem;
                     color: $color-primary-light;
-                    position: relative;
+                    .timeline-year-end {
+                        margin-left: 5px;
+                    }
                 }
             }
             .timeline-dot {
@@ -561,6 +512,7 @@ body {
                     font-size: 1rem;
                     backdrop-filter: blur(10px);
                     transition: all 0.3s ease;
+                    text-align: left;
                 }
                 textarea {
                     margin-bottom: 20px;
@@ -677,27 +629,34 @@ footer {
         border: 1px solid #fff;
         width: 50px;
         height: 50px;
-        border-radius: 50px;
+        border-radius: 50%;
         padding: 10px 10px;
         color: #fff;
         cursor: pointer;
         background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+            color: $color-primary-light;
+            text-shadow: 0 0 10px rgba(224, 163, 255, 0.5);
+        }
     }
     .language-switcher {
         list-style: none;
-        margin: 4px 0 0;
-        padding: 0;
-        position: absolute;
-        width: 100%;
-        background: transparent;
-        border-radius: 10%;
-        display: none;
+        margin: 6px 0 0;
+        padding: 15px 10px;
         border: 1px solid #fff;
+        border-radius: 9999px;
+        display: none;
+        position: absolute;
+        background: transparent;
+        left: 2px;
         &.open {
             display: block;
         }
         li {
-            padding: 6px 10px;
+            // padding-bottom: 8px;
             cursor: pointer;
             &:hover {
                 color: $color-primary-light;
